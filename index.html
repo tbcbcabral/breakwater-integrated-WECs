@@ -45,16 +45,28 @@
     body.home {
         background: url('./images/backgroundHome.jpg') no-repeat center center fixed;
         background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr; /* Divide the page into three equal rows */
         color: white;
         text-align: center;
     }
     #content {
-        margin-top: 4em; /* To ensure the content is not hidden behind the fixed nav */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1; /* Place content in the first row */
+        margin-top: 4em; /* Ensure the content is not hidden behind the fixed nav */
+        padding-top: 7em; /* Add padding to fine-tune the vertical position */
+        margin-bottom: auto; /* Push content upwards */    }
+    .content-wrapper {
+        width: 100%;
+        max-width: 800px;
+    }
+    .content-wrapper img {
+        max-width: 100%;
+        height: auto;
+        margin: 1em 0;
     }
     </style>
     <title>Breakwater-integrated WECs</title>
@@ -67,9 +79,14 @@
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
+    <div class="spacer"></div> <!-- Optional: This div pushes the content down -->
     <div id="content">
         <h1>Welcome to the Home Page</h1>
         <p>Content of the Home page.</p>
+        <img src="image1.jpg" alt="Sample Image 1">
+        <p>Additional content below the image.</p>
+        <img src="image2.jpg" alt="Sample Image 2">
     </div>
+    <div class="spacer"></div> <!-- Optional: This div pushes the content up -->
 </body>
 </html>

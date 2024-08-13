@@ -86,23 +86,31 @@
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
         <script>
-            // Define the extent (bounding box) for the map [minX, minY, maxX, maxY]
-            var extent = [xmin, ymin, xmax, ymax]; // Replace with your desired extent coordinates
-
-            // Create the map
-            var map = new ol.Map({
-                target: 'map',
-                layers: layersList,
-                view: new ol.View({
-                    center: ol.proj.fromLonLat([lon, lat]), // Replace with your desired center
-                    zoom: 10, // Set your desired zoom level
-                    extent: extent // Restrict map panning to this extent
-                }),
-                controls: ol.control.defaults().extend([new ol.control.ScaleLine()]),
+        var map = new ol.Map({
+            target: 'map',
+            layers: layersList, // your layer list
+            view: new ol.View({
+                projection: 'EPSG:3857',
+                center: ol.proj.fromLonLat([0, 0]), // Center of the map (Longitude, Latitude)
+                zoom: 2, // Initial zoom level
+            }),
+            controls: ol.control.defaults().extend([new ol.control.ScaleLine()]),
+        });
+        
+        // Ensure the map fits within the window
+        map.getView().fit(map.getView().calculateExtent(map.getSize()), {
+            size: map.getSize(),
+            maxZoom: 10 // Maximum zoom level when fitting
+        });
+        
+        // Automatically resize the map when the window is resized
+        window.addEventListener('resize', function() {
+            map.updateSize();
+            map.getView().fit(map.getView().calculateExtent(map.getSize()), {
+                size: map.getSize(),
+                maxZoom: 10 // Maximum zoom level when fitting
             });
-
-            // Optionally, fit the view to the extent
-            map.getView().fit(extent, map.getSize());
-        </script>
+        });
+    </script>
     </body>
 </html>

@@ -86,31 +86,8 @@
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
         <script>
-        var map = new ol.Map({
-            target: 'map',
-            layers: layersList, // your layer list
-            view: new ol.View({
-                projection: 'EPSG:3857',
-                center: ol.proj.fromLonLat([0, 0]), // Center of the map (Longitude, Latitude)
-                zoom: 2, // Initial zoom level
-            }),
-            controls: ol.control.defaults().extend([new ol.control.ScaleLine()]),
-        });
-        
-        // Ensure the map fits within the window
-        map.getView().fit(map.getView().calculateExtent(map.getSize()), {
-            size: map.getSize(),
-            maxZoom: 10 // Maximum zoom level when fitting
-        });
-        
-        // Automatically resize the map when the window is resized
-        window.addEventListener('resize', function() {
-            map.updateSize();
-            map.getView().fit(map.getView().calculateExtent(map.getSize()), {
-                size: map.getSize(),
-                maxZoom: 10 // Maximum zoom level when fitting
-            });
-        });
+            // Adjust the view to fit the map's container height
+            map.getView().fit(map.getView().calculateExtent(map.getSize()));
     </script>
     </body>
 </html>

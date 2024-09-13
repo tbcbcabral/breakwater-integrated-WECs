@@ -19,7 +19,7 @@
         font-family: Arial, sans-serif;
     }
     nav {
-        background-color: rgba(173, 216, 230, 0.5); /* light blue with 50% transparency */
+        background-color: rgba(71, 157, 232, 0.753); /* light blue with 50% transparency */
         padding: 1em;
         position: fixed;
         width: 100%;
@@ -41,14 +41,27 @@
         text-decoration: none;
         color: #333;
         font-weight: bold;
+        font-size: 14px;
     }
     body {
-        margin-top: 4em; /* To ensure the content is not hidden behind the fixed nav */
+        background: url('./images/backgroundHome.jpg') no-repeat center center fixed;
+        background-size: cover;
+        margin-top: 3.2em; /* To ensure the content is not hidden behind the fixed nav */
     }
     #content {
-        padding: 2em;
-        max-width: 800px;
-        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 20px; /* Padding around the text */
+        display: inline-block; /* Only wrap the background around the content */
+        max-width: 1500px; /* Limit the width of the content */
+        margin: 4em auto; /* Center horizontally and add space from the top with the margin */
+        position: relative; /* Allow fine-tuning of the position */
+        top: 0em; /* Move the content down to fine-tune vertical positioning */
+        }
+    #content h1 {
+    font-size: 60px; /* Adjust the size of the heading */
+    }
+    #content p {
+    font-size: 30px; /* Adjust the size of the heading */
     }
     </style>
     <title>About - Breakwater-integrated WECs</title>
@@ -63,8 +76,10 @@
     </nav>
     <div id="content">
         <h1>About</h1>
-        <p>This page contains information about Breakwater-integrated WECs.</p>
-        <img src="path_to_image.jpg" alt="Image description">
+        <p>This database was created for informational purposes by Tomás Cabral.</p>
+        <p>The database may not be accurate and is constantly being updated.</p>
+        <p>Feel free to submit any suggestions to <a href="mailto:up201304327@up.pt">up201304327@up.pt</a>.</p>
+        <!-- <img src="path_to_image.jpg" alt="Image description"> -->
         <!-- Add more text and images as needed -->
     </div>
 </body>

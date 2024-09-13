@@ -18,10 +18,6 @@ map.getView().fit([-20998275.668799, -7956892.703546, 19251535.118712, 14506775.
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
     var isSmallScreen = window.innerWidth < 650;
 
-////small screen definition
-    var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
-    var isSmallScreen = window.innerWidth < 650;
-
 ////controls container
 
     //top left container

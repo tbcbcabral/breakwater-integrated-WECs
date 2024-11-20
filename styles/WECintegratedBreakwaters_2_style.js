@@ -1,105 +1,12 @@
 var size = 0;
 var placement = 'point';
-function categories_WECintegratedBreakwaters_2(feature, value, size, resolution, labelText,
-                       labelFont, labelFill, bufferColor, bufferWidth,
-                       placement) {
-                switch(value.toString()) {case 'Multi-reservoir OTD':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.76}), fill: new ol.style.Fill({color: 'rgba(51,230,131,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Circle({radius: 1.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(51,230,131,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'Multi-reservoir OTD, OWC':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.76}), fill: new ol.style.Fill({color: 'rgba(229,110,225,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Circle({radius: 1.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(229,110,225,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'Multiple oscillating bodies':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.76}), fill: new ol.style.Fill({color: 'rgba(109,208,42,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Circle({radius: 1.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(109,208,42,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'OTD':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.76}), fill: new ol.style.Fill({color: 'rgba(88,188,231,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Circle({radius: 1.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(88,188,231,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'OWC':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.76}), fill: new ol.style.Fill({color: 'rgba(202,180,118,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Circle({radius: 1.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(202,180,118,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'Single-reservoir OTD':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 6.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.76}), fill: new ol.style.Fill({color: 'rgba(234,26,50,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Circle({radius: 1.4 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(234,26,50,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;}};
 
 var style_WECintegratedBreakwaters_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
     };
-    var value = feature.get("Technology");
+    var value = ""
     var labelText = "";
     size = 0;
     var labelFont = "10px, sans-serif";
@@ -113,10 +20,13 @@ var style_WECintegratedBreakwaters_2 = function(feature, resolution){
     if ("" !== null) {
         labelText = String("");
     }
-    
-var style = categories_WECintegratedBreakwaters_2(feature, value, size, resolution, labelText,
-                          labelFont, labelFill, bufferColor,
-                          bufferWidth, placement);
+    var style = [ new ol.style.Style({
+        image: new ol.style.Circle({radius: 4.0 + size,
+            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(190,207,80,1.0)'})}),
+        text: createTextStyle(feature, resolution, labelText, labelFont,
+                              labelFill, placement, bufferColor,
+                              bufferWidth)
+    })];
 
     return style;
 };

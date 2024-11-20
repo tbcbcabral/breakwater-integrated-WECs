@@ -14,6 +14,10 @@
         <style>
         html, body {
             background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scroll bars */
         }
         .ol-control > * {
             background-color: #f8f8f8!important;
@@ -58,14 +62,11 @@
             font-weight: bold;
             font-size: 14px;
         }
-        html, body, #map {
+        #map {
+            position: absolute;
+            top: 3.2em; /* Adjust this value to match the height of your nav bar */
+            bottom: 0;
             width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        .spacer {
-            height: 3.2em; /* Adjust this value to match the height of your nav bar */
         }
         </style>
         <title>Breakwater-integrated WECs</title>
@@ -78,7 +79,6 @@
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
-        <div class="spacer"></div> <!-- Spacer to push the map content down -->
         <div id="map">
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>

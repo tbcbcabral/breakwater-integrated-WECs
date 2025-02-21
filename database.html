@@ -19,6 +19,7 @@
       font-family: Arial, sans-serif;
       padding: 20px;
       background-color: #f4f4f4;
+      padding-top: 60px; /* same as the navbar height */
     }
     table {
       width: 100%;
@@ -37,11 +38,12 @@
       background-color: #04AA6D;
       color: white;
     }
+
   </style>
 </head>
 <body>
 
-  <h1>Breakwater-integrated WECs database</h1>
+
   <table id="csv-table">
     <thead></thead>
     <tbody></tbody>
@@ -97,6 +99,16 @@
       });
     });
   </script>
+  
+<div id="navbar"></div>
 
 </body>
+
+<script>
+  fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('navbar').innerHTML = data)
+      .catch(error => console.error('Error loading navbar:', error));
+</script>
+
 </html>

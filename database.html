@@ -21,6 +21,7 @@
       background-color: #f4f4f4;
       padding-top: 60px; /* same as the navbar height */
     }
+    
     table {
       width: 100%;
       margin: 20px 0;
@@ -93,7 +94,16 @@
         $('#csv-table tbody').html(bodyHtml);
 
         // Initialize DataTables
-        $('#csv-table').DataTable();
+        $('#csv-table').DataTable({
+          "pageLength": 10,  // Default number of rows per page
+          "lengthMenu": [5, 10, 25, 50],  // Options for rows per page
+          "columnDefs": [
+            {
+              "targets": -1, // Index of the "Figures" column (last column)
+              "visible": false // Hide the "Figures" column
+            }
+          ]
+});
       }).fail(function() {
         console.error("Error loading CSV file.");
       });

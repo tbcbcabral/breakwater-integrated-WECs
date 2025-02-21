@@ -17,7 +17,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevent scroll bars */
+            overflow: hidden;
         }
         .ol-control > * {
             background-color: #f8f8f8!important;
@@ -35,42 +35,19 @@
         } 
         .ol-control {
             background-color: rgba(255,255,255,.4) !important;
-            padding: 2px !important;
+            padding: 3px !important;
         } 
-        nav {
-            background-color: rgba(71, 157, 232, 0.753); /* light blue with 50% transparency */
-            padding: 1em;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 1em;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            font-size: 14px;
-        }
         #map {
             position: absolute;
-            top: 3.2em; /* Adjust this value to match the height of your nav bar */
+            top: 4.3em; /* Adjust this value to match the height of your nav bar */
             bottom: 0;
             width: 100%;
         }
         </style>
         <title>Breakwater-integrated WECs</title>
     </head>
+
+    <div id="navbar"></div>
     <body>
         <nav>
             <ul>
@@ -98,4 +75,12 @@
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
     </body>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data)
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
 </html>

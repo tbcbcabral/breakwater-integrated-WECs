@@ -18,31 +18,7 @@
         padding: 0;
         font-family: Arial, sans-serif;
     }
-    nav {
-        background-color: rgba(71, 157, 232, 0.753); /* light blue with 50% transparency */
-        padding: 1em;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-    nav ul li {
-        margin: 0 1em;
-    }
-    nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        font-size: 14px;
-    }
+
     body {
         background: url('./images/backgroundHome.jpg') no-repeat center center fixed;
         background-size: cover;
@@ -66,6 +42,9 @@
     </style>
     <title>About - Breakwater-integrated WECs</title>
 </head>
+
+<div id="navbar"></div>
+
 <body>
     <nav>
         <ul>
@@ -79,8 +58,15 @@
         <p>This database was created for informational purposes by Tomás Cabral.</p>
         <p>The database may not be accurate and is constantly being updated.</p>
         <p>Feel free to submit any suggestions to <a href="mailto:up201304327@up.pt">up201304327@up.pt</a>.</p>
-        <!-- <img src="path_to_image.jpg" alt="Image description"> -->
-        <!-- Add more text and images as needed -->
+
     </div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data)
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
 </body>
 </html>

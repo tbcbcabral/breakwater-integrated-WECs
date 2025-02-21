@@ -13,36 +13,13 @@
     <link rel="stylesheet" href="./resources/qgis2web.css">
     <style>
     html, body {
-        background-color: #ffffff;
+        background-color: #f8050500;
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
+        overflow: hidden;
     }
-    nav {
-        background-color: rgba(71, 157, 232, 0.753); /* light blue with 50% transparency */
-        padding: 1em;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-    nav ul li {
-        margin: 0 1em;
-    }
-    nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        font-size: 14px;
-    }
+    
     body.home {
         background: url('./images/backgroundHome.jpg') no-repeat center center fixed;
         background-size: cover;
@@ -57,15 +34,15 @@
         padding: 20px; /* Padding around the text */
         display: inline-block; /* Only wrap the background around the content */
         max-width: 1500px; /* Limit the width of the content */
-        margin: 4em auto; /* Center horizontally and add space from the top with the margin */
+        /*margin: 4em auto; /* Center horizontally and add space from the top with the margin */
         position: relative; /* Allow fine-tuning of the position */
         top: -5em; /* Move the content down to fine-tune vertical positioning */
         }
     #content h1 {
-    font-size: 60px; /* Adjust the size of the heading */
+    font-size: 36px; /* Adjust the size of the heading */
     }
     #content p {
-    font-size: 30px; /* Adjust the size of the heading */
+    font-size: 16px; /* Adjust the size of the heading */
     }
     .content-wrapper {
         width: 100%;
@@ -80,14 +57,9 @@
     <title>Breakwater-integrated WECs</title>
 </head>
 <body class="home">
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="map.html">Map</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-    <div class="spacer"></div> <!-- Optional: This div pushes the content down -->
+
+    <div id="navbar"></div>
+
     <div id="content">
         <h1>Breakwater-integrated WECs database</h1>
         <p>Welcome to the first database of Wave Energy Converters integrated into breakwaters.</p>
@@ -96,6 +68,12 @@
         <p>Additional content below the image.</p>
         <img src="image2.jpg" alt="Sample Image 2"> -->
     </div>
-    <div class="spacer"></div> <!-- Optional: This div pushes the content up -->
+    <div class="spacer"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data)
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
 </body>
 </html>

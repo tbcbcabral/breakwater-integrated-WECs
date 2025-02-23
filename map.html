@@ -39,9 +39,15 @@
         } 
         #map {
             position: absolute;
-            top: 4.2em; /* Adjust this value to match the height of your nav bar */
+            top: 4.1em; /* Adjust this value to match the height of your nav bar */
             bottom: 0;
             width: 100%;
+        }
+        img {
+        max-width: 100px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
         }
         </style>
         <title>Breakwater-integrated WECs</title>
@@ -76,5 +82,14 @@
             .then(data => document.getElementById('navbar').innerHTML = data)
             .catch(error => console.error('Error loading navbar:', error));
     </script>
+
+<div id="footer"></div>
+
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(error => console.error('Error loading footer:', error));
+</script>
 
 </html>

@@ -120,8 +120,8 @@ td {
 }
 
 td img {
-	max-height: 60vh!important;
-	max-width: 60vw!important;
+	max-height: 400px!important;
+	max-width: 400px!important;
 }
 
 td video {

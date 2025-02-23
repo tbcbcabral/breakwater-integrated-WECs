@@ -41,7 +41,7 @@
     }
     .content-wrapper {
         width: 100%;
-        max-width: 800px;
+        /*max-width: 800px;*/
     }
     .content-wrapper img {
         max-width: 100%;
@@ -70,6 +70,15 @@
             .then(data => document.getElementById('navbar').innerHTML = data)
             .catch(error => console.error('Error loading navbar:', error));
     </script>
+
+<div id="footer"></div>
+
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(error => console.error('Error loading footer:', error));
+</script>
 
 </body>
 </html>

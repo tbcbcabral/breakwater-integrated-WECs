@@ -15,10 +15,21 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
   
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
     body {
       font-family: Arial, sans-serif;
+      display:flex;
+      flex-direction: column;
       padding: 0 px;
       background-color: #f4f4f4;
+      padding-top: 4.3em; /* same as the navbar height */
+    }
+
+    .content {
+      flex: 1;  /* This will make the content grow and push footer to the bottom */
       padding-top: 4.3em; /* same as the navbar height */
     }
     
@@ -119,6 +130,15 @@
       .then(response => response.text())
       .then(data => document.getElementById('navbar').innerHTML = data)
       .catch(error => console.error('Error loading navbar:', error));
+</script>
+
+<div id="footer"></div>
+
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(error => console.error('Error loading footer:', error));
 </script>
 
 </html>

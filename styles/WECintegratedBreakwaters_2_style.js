@@ -13,6 +13,7 @@ function categories_WECintegratedBreakwaters_2(feature, value, size, resolution,
                               bufferWidth)
     })];
                     break;
+                    
 case 'Multi-reservoir OTD, OWC':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 8.0 + size,
@@ -84,4 +85,5 @@ var style = categories_WECintegratedBreakwaters_2(feature, value, size, resoluti
                           bufferWidth, placement);
 
     return style;
+    
 };
